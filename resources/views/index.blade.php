@@ -77,12 +77,7 @@
             </a>
             <ul class="dropdown-menu">
               <li class="dropdown-submenu">
-                <a class="dropdown-item" href="#">Servicios de Pago</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Pago de Matrícula</a></li>
-                  <li><a class="dropdown-item" href="#">Pago de Pensiones Mensuales</a></li>
-                  <li><a class="dropdown-item" href="#">Pago de uso de instalaciones</a></li>
-                </ul>
+                <a class="dropdown-item" href="#">Pago de uso de instalaciones</a>
               </li>
               <li class="dropdown-submenu">
                 <a class="dropdown-item" href="#">Beneficios Incluidos con la Matrícula</a>
@@ -126,18 +121,13 @@
           </li>
         </ul>
         <div class="d-flex align-items-center">
-          <div class="contact-info me-3" style="color: gray;">
-            <i class="bi bi-telephone"> <img src="/images/telefono.png" alt="telefono" style="height: 20px;"> </i>
-            0882 121
-          </div>
           <a href="{{ route('login') }}" class="btn btn-intranet me-2">Intranet</a>
-          <a href="#" class="btn btn-contacto">Contáctenos</a>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Noticias Destacadas -->
+  <!-- Carrusel de noticias Destacadas -->
   <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -170,7 +160,7 @@
   <section class="education-section py-5 bg-light">
     <div class="container text-center">
       <h2 class="section-title">Educación Sin Límites</h2>
-      <p class="mb-5">Formando líderes para un mundo cambiante con nuestro enfoque innovador.</p>
+      <p class="text-muted">Formando líderes para un mundo cambiante con nuestro enfoque innovador.</p>
       <div class="row">
         <div class="col-md-4">
           <img src="{{ asset('/img/icon-colegio.png')}}" alt="Colegio">
@@ -197,46 +187,58 @@
       <h2 class="section-title">Novedades</h2>
       <div class="row">
         <div class="col-md-3">
-          <img src="/images/misionvision.png" alt="Novedad 1" class="img-fluid rounded">
-          <p class="mt-2 text-center">Título de la novedad 1</p>
+          <img src="{{ asset('/img/novedadhome1.png')}}" alt="Novedad 1" class="img-fluid rounded">
+          <p class="mt-2 text-center">Charla sobre el acoso</p>
         </div>
         <div class="col-md-3">
-          <img src="/images/sistema-pagos.avif" alt="Novedad 2" class="img-fluid rounded">
-          <p class="mt-2 text-center">Título de la novedad 2</p>
+          <img src="{{ asset('/img/novedadhome2.png')}}" alt="Novedad 2" class="img-fluid rounded">
+          <p class="mt-2 text-center">Directiva 2025</p>
         </div>
         <div class="col-md-3">
-          <img src="path/to/novelty3.jpg" alt="Novedad 3" class="img-fluid rounded">
-          <p class="mt-2 text-center">Título de la novedad 3</p>
+          <img src="{{ asset('/img/novedadhome3.png')}}" alt="Novedad 3" class="img-fluid rounded">
+          <p class="mt-2 text-center">Primer puesto en concurso de matemática interescolar</p>
         </div>
         <div class="col-md-3">
-          <img src="path/to/novelty4.jpg" alt="Novedad 4" class="img-fluid rounded">
-          <p class="mt-2 text-center">Título de la novedad 4</p>
+          <img src="{{ asset('/img/novedadhome4.png')}}" alt="Novedad 4" class="img-fluid rounded">
+          <p class="mt-2 text-center">Inauguración de la verbena Cramex</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Redes de Contacto -->
-  <section class="contact-section py-5 bg-light">
-      <div class="container text-center">
-        <h2 class="section-title">Contáctanos</h2>
-        <p>Comunícate directamente con nuestras sedes.</p>
-      <div class="d-flex justify-content-center">
-        <div class="contact-icons">
-          <img src="path/to/whatsapp-icon.png" alt="WhatsApp">
-          <span>997594975</span>
+<section class="contact-section py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="section-title text-danger fw-bold">Contáctanos</h2>
+        <p class="text-muted">Comunícate directamente con nuestras sedes.</p>
+        
+        <div class="d-flex justify-content-center gap-4 mt-3">
+            <!-- WhatsApp -->
+            <div class="contact-icons d-flex align-items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-whatsapp text-success" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592"></path>
+                </svg>
+                <span class="fw-bold">997594975</span>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="contact-icons d-flex align-items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-telephone text-primary" viewBox="0 0 16 16">
+                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58z"></path>
+                </svg>
+                <span class="fw-bold">(01) 6805300</span>
+            </div>
+
+            <!-- Correo -->
+            <div class="contact-icons d-flex align-items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-envelope text-danger" viewBox="0 0 16 16">
+                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"></path>
+                </svg>
+                <span class="fw-bold">contactanos@cramex.edu.pe</span>
+            </div>
         </div>
-        <div class="contact-icons">
-          <img src="/images/telefono.png" alt="Teléfono">
-          <span>(01) 6805300</span>
-        </div>
-        <div class="contact-icons">
-          <img src="path/to/email-icon.png" alt="Email">
-          <span>contactanos@sacooliveros.edu.pe</span>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
   <!-- Footer -->
   <footer>
@@ -273,7 +275,7 @@
         </div>
       </div>
       <div class="text-center mt-3">
-        <p>© Sociedad Saco Oliveros SAC - RUC: 20284670796</p>
+        <p>© Colegio Cramex SAC - RUC: 20284670796</p>
       </div>
     </div>
   </footer>
