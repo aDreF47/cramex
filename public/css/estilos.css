@@ -1,0 +1,209 @@
+
+body {
+    font-family: Arial, sans-serif, Garamond, monospace;
+  }
+
+  .navbar {
+    background-color: #FFC000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+    font-size: 18px;/* Aumenta el tamaño de la letra */
+    font-weight: bold;/* Hace que el texto se vea más grueso */
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+    color: #DD291B;
+  }
+
+  .nav-link {
+    color: #000;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav-link:hover {
+    color: #DD291B;
+  }
+
+  .nav-link.active {
+    color: #007bff;
+  }
+
+  .dropdown-menu {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .dropdown-item {
+    color: #000;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .dropdown-item:hover {
+    background-color: #FFC000;
+    /* Color destacado */
+    color: #FFFFFF;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+
+  /* Opcional: Transición suave al abrir la lista */
+  .dropdown-menu.show {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeIn 0.3s forwards;
+  }
+
+  .dropdown-menu .dropdown-submenu {
+    position: relative;
+  }
+
+  .dropdown-menu .dropdown-submenu .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    /* Coloca el submenú a la derecha del elemento padre */
+    margin-top: -6px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1050;
+  }
+
+  .dropdown-menu .dropdown-submenu:hover .dropdown-menu {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .btn-contacto {
+    background-color: #00A54F;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 15px;
+  }
+
+  .btn-contacto:hover {
+    background-color: #395723;
+    color: #FFC000;
+  }
+
+  .btn-matricula {
+    background-color: #DD291B;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 18px;
+  }
+
+  .btn-intranet {
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 15px;
+  }
+
+  .contact-info {
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-info i {
+    margin-right: 10px;
+  }
+
+  body {
+    padding-top: 100px;
+    /* Add padding to avoid overlap with the fixed navbar */
+  }
+
+  .Logo {
+    position: relative;
+    left: -10px;
+    /* Mueve la imagen a la izquierda */
+  }
+
+  .section-title {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #DD291B;
+  }
+
+  .news-section img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .contact-icons img {
+    height: 40px;
+    margin-right: 15px;
+  }
+
+  footer {
+    background-color: #00448C;
+    color: #FFFFFF;
+    padding: 30px 0;
+  }
+
+  footer a {
+    color: #FFD700;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  #carouselExample {
+  height: 600px; /* Ocupa el 100% de la altura de la ventana */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  overflow: hidden; /* Oculta cualquier contenido extra */
+  background-color: #000; /* Fondo negro para áreas vacías */
+  border-radius: 8px; /* Opcional: Bordes redondeados */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+
+#carouselExample img {
+  height: 100%; /* Ajusta la altura de la imagen al 100% del contenedor */
+  width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+  object-fit: cover; /* Escala y recorta la imagen si es necesario */
+  object-position: center; /* Centra la imagen en el contenedor */
+  display: block;
+}
+
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+      filter: invert(1); /* Cambia el color de las flechas a blanco */
+  }
