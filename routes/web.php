@@ -6,8 +6,29 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ProductoController;
 
 Route::get('/', function () {
-    return view('index');
+    return view('pages.home');
 })->name('home');
+
+Route::get('/matricula', function () {
+    return view('pages.matricula');
+})->name('matricula');
+
+Route::get('/nosotros', function () {
+    return view('pages.nosotros');
+})->name('nosotros');
+
+Route::get('/talleres', function () {
+    return view('pages.talleres');
+})->name('talleres');
+
+Route::get('/servicios', function () {
+    return view('pages.servicios');
+})->name('servicios');
+
+Route::get('/novedades', function () {
+    return view('pages.novedades');
+})->name('novedades');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
