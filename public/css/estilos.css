@@ -2,7 +2,13 @@
 body {
     font-family: Arial, sans-serif, Garamond, monospace;
   }
-
+.cramexlogoletra{
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-style: normal;
+}
   .navbar {
     background-color: #FFC000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -119,12 +125,25 @@ body {
     padding: 5px 15px;
     font-size: 18px;
   }
-
-  .btn-intranet {
-    background-color: #007BFF;
+  
+  .btn-matricula:hover {
+    background-color: #9c2a22;
     color: white;
     border-radius: 5px;
     padding: 5px 15px;
+    font-size: 18px;
+  }
+
+  .btn-intranet {
+    background-color: #00A54F;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 15px;
+  }
+
+  .btn-intranet:hover {
+    background-color: #00A54F;
+    color: #FFC000;
   }
 
   .contact-info {
@@ -189,7 +208,7 @@ body {
   justify-content: center; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
   overflow: hidden; /* Oculta cualquier contenido extra */
-  background-color: #000; /* Fondo negro para áreas vacías */
+  background-color: #ffffff; /* Fondo negro para áreas vacías */
   border-radius: 8px; /* Opcional: Bordes redondeados */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra opcional */
 }
@@ -207,3 +226,52 @@ body {
   .carousel-control-next-icon {
       filter: invert(1); /* Cambia el color de las flechas a blanco */
   }
+
+
+
+  #btnScrollTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Oculto por defecto */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.social-bar {
+  position: fixed;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.facebook { background: #1877F2; }
+.instagram { background: #C13584; }
+.email { background: #D44638; }
+.whatsapp { background: #25D366; }
+
+.social-icon:hover {
+  opacity: 0.8;
+}
+
