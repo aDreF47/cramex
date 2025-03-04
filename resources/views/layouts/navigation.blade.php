@@ -18,7 +18,33 @@
                     <x-nav-link :href="route('products.productos')" :active="request()->routeIs('products.productos')">
                         {{ __('Productos') }}
                     </x-nav-link>
-                    
+                     
+                </div>
+            </div>
+                        <!-- Carrito de compras -->
+            <div x-data="carritoStore()" class="relative">
+                <!-- Ícono del carrito -->
+                <button @click="mostrarCarrito = !mostrarCarrito" class="relative p-2">
+                    🛒 <span x-text="carrito.length" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full"></span>
+                </button>
+
+                <!-- Carrito desplegable -->
+                <div x-show="mostrarCarrito" class="absolute right-0 mt-2 w-64 bg-white border rounded-lg shadow-lg p-4">
+                    <h3 class="font-semibold text-gray-700">🛍️ Mi Carrito</h3>
+                    <ul class="divide-y divide-gray-300 max-h-60 overflow-y-auto">
+                        <template x-for="(producto, index) in carrito" :key="index">
+                            <li class="flex items-center justify-between py-2">
+                                <img :src="producto.imagen" class="w-10 h-10 rounded">
+                                <span class="text-sm" x-text="producto.nombre"></span>
+                                <span class="text-sm font-bold">S/ <span x-text="producto.precio"></span></span>
+                                <button @click="eliminarProducto(index)" class="text-red-600">❌</button>
+                            </li>
+                        </template>
+                    </ul>
+                    <p class="font-bold mt-2 text-gray-900">Total: S/ <span x-text="calcularTotal()"></span></p>
+                    <button @click="generarTicket()" class="bg-green-500 text-white px-4 py-2 rounded mt-2 w-full">
+                        Generar Ticket
+                    </button>
                 </div>
             </div>
 
@@ -87,6 +113,7 @@
             </div>
 
             <div class="mt-3 space-y-1">
+               
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Perfil') }}
                 </x-responsive-nav-link>

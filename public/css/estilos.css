@@ -245,7 +245,7 @@ body {
 
 .social-bar {
   position: fixed;
-  left: -37px; /* Oculto con solo un pequeño relieve */
+  left: 10px; /* Oculto con solo un pequeño relieve */
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -253,10 +253,6 @@ body {
   gap: 10px;
   transition: left 0.3s ease-in-out;
   z-index: 1000; /* Asegura que esté encima del carrusel */
-}
-
-.social-bar:hover {
-  left: 10px; /* Aparece al pasar el mouse */
 }
 
 .social-icon {
