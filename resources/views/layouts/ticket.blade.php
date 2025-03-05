@@ -58,9 +58,11 @@
             },
 
             siguiente() {
+                
                 switch (this.etapa) {
                     case 1:
                         this.etapa += 1;
+                        localStorage.setItem('montoTotal', this.calcularTotal()); // Guardar el monto total
                         localStorage.setItem('etapa', this.etapa); // Guardar etapa antes de redirigir
                         window.location.href = "{{ route('ticket.transferencia') }}";
                         break;

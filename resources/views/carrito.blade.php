@@ -47,12 +47,11 @@
                 <p class="font-bold mt-2 text-gray-900">Total: S/ <span x-text="calcularTotal()"></span></p>
             </div>
 
-            <form action="{{ route('procesopago') }}" method="GET">
+            <form action="{{ route('procesopago') }}" method="GET" onsubmit="localStorage.setItem('etapa', 1);">
                 <button class="mt-3 bg-green-600 hover:bg-green-700 text-black py-2 px-4 rounded-lg w-full">
                     ✅ Generar Ticket de Pago
                 </button>
             </form>
-
         </div>
     </div>
 
