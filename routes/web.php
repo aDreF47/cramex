@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\MatriculaController;
 
 Route::get('/', function () {
     return view('pages.home');
@@ -46,5 +47,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+//Route::get('/matricula', [MatriculaController::class, 'index'])->name('matricula.proceso');
+Route::get('/matricula/registro', [MatriculaController::class, 'registro'])->name('matricula.registro');
+Route::post('/matricula/registro', [MatriculaController::class, 'store'])->name('matricula.store');
 
 require __DIR__.'/auth.php';

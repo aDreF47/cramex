@@ -18,18 +18,14 @@
               <ul class="navbar-nav mx-auto gap-2">
                   <!-- Matrícula -->
                   <li class="nav-item dropdown">
-                      <a class="btn btn-danger dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Matrícula
-                      </a>
-                      <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Proceso de Matrícula</a></li>
-                          <li><a class="dropdown-item" href="#">Requisitos</a></li>
-                          <li><a class="dropdown-item" href="#">Cronograma</a></li>
-                          <li><a class="dropdown-item" href="#">Costos y Métodos de Pago</a></li>
-                          <li><a class="dropdown-item" href="#">Alumnos Nuevos</a></li>
-                          <li><a class="dropdown-item" href="#">Alumnos Antiguos</a></li>
-                      </ul>
-                  </li>
+                        <a class="btn btn-danger dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Matrícula
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ route('matricula.registro') }}">Registro de Matrícula</a></li>
+
+                        </ul>
+                    </li>
 
                   <!-- Nosotros -->
                   <li class="nav-item dropdown">
