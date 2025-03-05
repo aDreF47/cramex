@@ -33,7 +33,7 @@
                     <ul class="divide-y divide-gray-300 max-h-60 overflow-y-auto">
                         <template x-for="(producto, index) in carrito" :key="producto.id">
                             <li class="flex items-center justify-between py-2">
-                                                                <div class="flex-1 px-2">
+                                <div class="flex-1 px-2">
                                     <span class="text-sm block font-semibold" x-text="producto.nombre"></span>
                                     <span class="text-sm font-bold">S/ <span x-text="(producto.precio * producto.cantidad).toFixed(2)"></span></span>
                                 </div>

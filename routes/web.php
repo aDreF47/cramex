@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CarritoController;
+use App\Http\Controllers\TicketController;
 use App\Http\Controllers\TicketPagoController;
 
 Route::get('/', function () {
@@ -50,6 +51,11 @@ Route::middleware('auth')->group(function () {
 });
 Route::middleware(['auth'])->group(function () {
     Route::get('/carrito', [CarritoController::class, 'index'])->name('carrito.index');
+    // Rutas del proceso de pago
+    Route::get('/ticket-pago', [TicketPagoController::class, 'facturacion'])->name('procesopago');
+    Route::get('/ticket-pago/transferencia', [TicketPagoController::class, 'transferencia'])->name('ticket.transferencia');
+    Route::get('/ticket-pago/confirmacion', [TicketPagoController::class, 'confirmacion'])->name('ticket.confirmacion');
+
     Route::post('/carrito/agregar', [CarritoController::class, 'agregar'])->name('carrito.agregar');
     Route::delete('/carrito/eliminar/{id}', [CarritoController::class, 'eliminar'])->name('carrito.eliminar');
     Route::delete('/carrito/vaciar', [CarritoController::class, 'vaciar'])->name('carrito.vaciar');
@@ -60,12 +66,10 @@ Route::middleware(['auth'])->group(function () {
         return view('carrito');
     })->name('carrito.index');
 });
-Route::get('/ticket-pago', function () {
-    return view('pages.procesopago');
-})->name('procesopago');
+
 Route::middleware(['auth'])->group(function () {
-    Route::get('/ticket-pago', [CarritoController::class, 'generarTicket'])->name('ticket.pago');
+    Route::get('/ticket', [CarritoController::class, 'generarTicket'])->name('ticket.pago');
 });
 
-Route::get('/ticket-pago', [TicketPagoController::class, 'mostrarTicket'])->name('ticket.pago');
+Route::get('/ticket', [TicketController::class, 'mostrarTicket'])->name('ticket.pago');
 require __DIR__.'/auth.php';

@@ -1,6 +1,3 @@
-@extends('ticket-pago')
-
-@section('content')
 <!-- Sección de Pago en 2 Columnas -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start mt-6">
 
@@ -69,4 +66,3 @@
 </div>
 
 </div>
-@endsection

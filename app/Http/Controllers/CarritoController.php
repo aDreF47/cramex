@@ -29,7 +29,7 @@ class CarritoController extends Controller
         session()->put('carrito', $carrito);
 
         // Redirigir a la página del ticket de pago
-        return redirect()->route('ticket.pago');
+        return redirect()->route('procesopago');
     }
 
     public function agregar(Request $request)
