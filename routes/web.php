@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\CarritoController;
+use App\Http\Controllers\TicketPagoController;
 
 Route::get('/', function () {
     return view('pages.home');
@@ -46,5 +48,21 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+Route::middleware(['auth'])->group(function () {
+    Route::get('/carrito', [CarritoController::class, 'index'])->name('carrito.index');
+    Route::post('/carrito/agregar', [CarritoController::class, 'agregar'])->name('carrito.agregar');
+    Route::delete('/carrito/eliminar/{id}', [CarritoController::class, 'eliminar'])->name('carrito.eliminar');
+    Route::delete('/carrito/vaciar', [CarritoController::class, 'vaciar'])->name('carrito.vaciar');
+});
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/carrito', function () {
+        return view('carrito');
+    })->name('carrito.index');
+});
+Route::middleware(['auth'])->group(function () {
+    Route::get('/ticket-pago', [CarritoController::class, 'generarTicket'])->name('ticket.pago');
+});
+
+Route::get('/ticket-pago', [TicketPagoController::class, 'mostrarTicket'])->name('ticket.pago');
 require __DIR__.'/auth.php';

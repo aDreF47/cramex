@@ -32,5 +32,71 @@
                 {{ $slot }}
             </main>
         </div>
+        <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('carritoStore', () => ({
+                carrito: JSON.parse(localStorage.getItem('carrito')) || [],
+                mostrarCarrito: false,
+
+                agregarAlCarrito(producto) {
+                    if (!producto.id || !producto.nombre || !producto.precio) {
+                        console.error("Error: Producto sin ID, nombre o precio inválido", producto);
+                        return;
+                    }
+
+                    let existe = this.carrito.find(p => p.id === producto.id);
+                    if (existe) {
+                        existe.cantidad += 1;
+                    } else {
+                        this.carrito.push({
+                            id: producto.id,
+                            nombre: producto.nombre,
+                            precio: parseFloat(producto.precio),
+                            imagen: producto.imagen ?? '',
+                            cantidad: 1
+                        });
+                    }
+                    this.guardarCarrito();
+                },
+
+                guardarCarrito() {
+                    localStorage.setItem('carrito', JSON.stringify(this.carrito));
+                },
+
+                eliminarProducto(id) {
+                    this.carrito = this.carrito.filter(p => p.id !== id);
+                    this.guardarCarrito();
+                },
+
+                calcularTotal() {
+                    return this.carrito.reduce((total, p) => total + (p.precio * p.cantidad), 0).toFixed(2);
+                },
+
+
+                generarTicket() {
+                    alert("Generando ticket para: \n" + JSON.stringify(this.carrito, null, 2));
+                    this.carrito = [];
+                    this.guardarCarrito();
+                }, 
+                aumentarCantidad(id) {
+                    let producto = this.carrito.find(p => p.id === id);
+                    if (producto) {
+                        producto.cantidad += 1;
+                        this.guardarCarrito();
+                    }
+                },
+
+                disminuirCantidad(id) {
+                    let producto = this.carrito.find(p => p.id === id);
+                    if (producto && producto.cantidad > 1) {
+                        producto.cantidad -= 1;
+                        this.guardarCarrito();
+                    } else {
+                        producto.cantidad = 1;
+                    }
+                }
+            }));
+        });
+        </script>
     </body>
 </html>

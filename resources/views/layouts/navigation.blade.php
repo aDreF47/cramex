@@ -22,27 +22,33 @@
                 </div>
             </div>
                         <!-- Carrito de compras -->
-            <div x-data="carritoStore()" class="relative">
+            <div x-data="carritoStore" class="relative">
                 <!-- Ícono del carrito -->
                 <button @click="mostrarCarrito = !mostrarCarrito" class="relative p-2">
                     🛒 <span x-text="carrito.length" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full"></span>
                 </button>
-
-                <!-- Carrito desplegable -->
-                <div x-show="mostrarCarrito" class="absolute right-0 mt-2 w-64 bg-white border rounded-lg shadow-lg p-4">
+                <!-- Mostrar carrito -->
+                <div x-show="mostrarCarrito" class="absolute right-0 mt-2 w-[350px] bg-white border rounded-lg shadow-lg p-6">
                     <h3 class="font-semibold text-gray-700">🛍️ Mi Carrito</h3>
                     <ul class="divide-y divide-gray-300 max-h-60 overflow-y-auto">
-                        <template x-for="(producto, index) in carrito" :key="index">
+                        <template x-for="(producto, index) in carrito" :key="producto.id">
                             <li class="flex items-center justify-between py-2">
-                                <img :src="producto.imagen" class="w-10 h-10 rounded">
-                                <span class="text-sm" x-text="producto.nombre"></span>
-                                <span class="text-sm font-bold">S/ <span x-text="producto.precio"></span></span>
-                                <button @click="eliminarProducto(index)" class="text-red-600">❌</button>
+                                                                <div class="flex-1 px-2">
+                                    <span class="text-sm block font-semibold" x-text="producto.nombre"></span>
+                                    <span class="text-sm font-bold">S/ <span x-text="(producto.precio * producto.cantidad).toFixed(2)"></span></span>
+                                </div>
+                                <!-- Controles de cantidad -->
+                                <div class="flex items-center space-x-2">
+                                    <button @click="disminuirCantidad(producto.id)" class="bg-gray-300 text-black px-2 rounded">➖</button>
+                                    <span class="text-sm font-bold" x-text="producto.cantidad"></span>
+                                    <button @click="aumentarCantidad(producto.id)" class="bg-gray-300 text-black px-2 rounded">➕</button>
+                                </div>
+                                <button @click="eliminarProducto(producto.id)" class="text-red-600">❌</button>
                             </li>
                         </template>
                     </ul>
                     <p class="font-bold mt-2 text-gray-900">Total: S/ <span x-text="calcularTotal()"></span></p>
-                    <button @click="generarTicket()" class="bg-green-500 text-white px-4 py-2 rounded mt-2 w-full">
+                    <button @click="generarTicket()" class="bg-green-500 text-black px-4 py-2 rounded mt-2 w-full">
                         Generar Ticket
                     </button>
                 </div>
