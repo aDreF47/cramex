@@ -18,7 +18,7 @@
               <ul class="navbar-nav mx-auto gap-2">
                   <!-- Matrícula -->
                   <li class="nav-item dropdown">
-                        <a class="btn btn-danger dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="btn btn-danger dropdown-toggle text-white" href="{{ route('matricula.proceso') }}" >
                             Matrícula
                         </a>
                         <ul class="dropdown-menu">
