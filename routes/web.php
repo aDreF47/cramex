@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\TicketPagoController;
+use App\Http\Controllers\MatriculaController;
 
 Route::get('/', function () {
     return view('pages.home');
@@ -72,4 +73,8 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/ticket', [TicketController::class, 'mostrarTicket'])->name('ticket.pago');
+Route::get('/matricula', [MatriculaController::class, 'index'])->name('matricula.proceso');
+Route::get('/matricula/registro', [MatriculaController::class, 'registro'])->name('matricula.registro');
+Route::post('/matricula/registro', [MatriculaController::class, 'store'])->name('matricula.store');
+
 require __DIR__.'/auth.php';
