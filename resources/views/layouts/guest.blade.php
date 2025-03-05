@@ -11,9 +11,6 @@
   <!-- Nucleo Icons -->
   <link href="{{ asset('assets/front/assets/css/nucleo-icons.css')}}" rel="stylesheet" />
   <link href="{{ asset('assets/front/assets/css/nucleo-svg.css')}}" rel="stylesheet" />
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="{{asset('fontawesome-free-6.7.2-web/css/all.min.css')}}"></link>
-  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <!-- Material Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
   <!-- CSS Files -->
@@ -34,10 +31,10 @@
     <span class="mask bg-gradient-dark opacity-6"></span>
     <div class="container my-auto">
     <div class="text-center">
-                    <a class="btn btn-link px-3" href="{{ route('home') }}">
-                        <img src="{{ asset('/img/cramexlogo.png')}}" alt="Logo" height="125">
-                    </a>
-                  </div>
+        <a class="btn btn-link px-3" href="{{ route('home') }}">
+            <img src="{{ asset('/img/cramexlogo.png')}}" alt="Logo" height="125">
+        </a>
+    </div>
       <div class="row">
         <div class="col-lg-4 col-md-8 col-12 mx-auto">
           <div class="card z-index-0 fadeIn3 fadeInBottom">
@@ -53,10 +50,7 @@
         <div class="row align-items-center justify-content-lg-between">
           <div class="col-12 col-md-6 my-auto">
             <div class="copyright text-center text-sm text-white text-lg-start">
-              © <script>
-                document.write(new Date().getFullYear())
-              </script>,
-              Desarrollado por estudiantes de la Facultad de Sistemas. Todos los Derechos Reservados.
+              © 2025, Desarrollado por estudiantes de la Facultad de Sistemas. Todos los Derechos Reservados.
             </div>
           </div>
         </div>
