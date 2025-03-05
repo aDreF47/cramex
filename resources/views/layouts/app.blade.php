@@ -72,7 +72,9 @@
                     return this.carrito.reduce((total, p) => total + (p.precio * p.cantidad), 0).toFixed(2);
                 },
 
-
+                regresar() {
+                    window.location.href = "{{ route('carrito.index') }}";
+                },
                 generarTicket() {
                     alert("Generando ticket para: \n" + JSON.stringify(this.carrito, null, 2));
                     this.carrito = [];

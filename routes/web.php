@@ -60,6 +60,9 @@ Route::middleware(['auth'])->group(function () {
         return view('carrito');
     })->name('carrito.index');
 });
+Route::get('/ticket-pago', function () {
+    return view('pages.procesopago');
+})->name('procesopago');
 Route::middleware(['auth'])->group(function () {
     Route::get('/ticket-pago', [CarritoController::class, 'generarTicket'])->name('ticket.pago');
 });

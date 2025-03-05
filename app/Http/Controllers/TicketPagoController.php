@@ -10,7 +10,7 @@ class TicketPagoController extends Controller
     {
        // Obtener el carrito desde la sesión
        $carrito = session()->get('carrito', []);
-
+        
        return view('ticket-pago', compact('carrito'));
     }
 }
