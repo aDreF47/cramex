@@ -48,7 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-//Route::get('/matricula', [MatriculaController::class, 'index'])->name('matricula.proceso');
+Route::get('/matricula', [MatriculaController::class, 'index'])->name('matricula.proceso');
 Route::get('/matricula/registro', [MatriculaController::class, 'registro'])->name('matricula.registro');
 Route::post('/matricula/registro', [MatriculaController::class, 'store'])->name('matricula.store');
 
